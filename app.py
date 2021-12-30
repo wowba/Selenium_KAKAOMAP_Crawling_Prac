@@ -12,7 +12,7 @@ elem.send_keys("동대문구 카페")
 # elem.send_keys("동대문구 카페")
 # elem.send_keys(Keys.RETURN)
 # time.sleep(5)
-#
+
 # name = driver.find_element_by_css_selector("#pane > div > div.Yr7JMd-pane-content.cYB2Ge-oHo7ed > div > div > div.siAUzd-neVct.section-scrollbox.cYB2Ge-oHo7ed.cYB2Ge-ti6hGc.siAUzd-neVct-Q3DXx-BvBYQ > div.siAUzd-neVct.section-scrollbox.cYB2Ge-oHo7ed.cYB2Ge-ti6hGc.siAUzd-neVct-Q3DXx-BvBYQ > div:nth-child(3) > div > a")
 # realname = name.get_attribute("aria-label")
 # print(realname)
