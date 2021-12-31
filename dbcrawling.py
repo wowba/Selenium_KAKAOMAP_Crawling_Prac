@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver import ActionChains
 import time
 
 from pymongo import MongoClient
@@ -11,7 +10,7 @@ client = MongoClient("localhost", 27017)
 # 서버용 MongoDB 연결
 # client = MongoClient('mongodb://test:test@localhost', 27017)
 
-db = client.mapCrawlingPrac
+db = client.toyproj
 
 # 코딩 시작! --------------------------------------------------------------------------------------------
 
@@ -29,8 +28,6 @@ elem = driver.find_element_by_name("q")
 seoul_gus = ["도봉구 맛집", "노원구 맛집", "강북구 맛집", "은평구 맛집","성북구 맛집", "중랑구 맛집","동대문구 맛집","종로구 맛집","서대문구 맛집",
             "중구 맛집", "성동구 맛집","광진구 맛집","용산구 맛집","마포구 맛집", "강서구 맛집","양천구 맛집","구로구 맛집","영등포구 맛집","동작구 맛집","금천구 맛집",
            "관악구 맛집","서초구 맛집","강남구 맛집","송파구 맛집","강동구 맛집"]
-
-
 
 for seoul_gu in seoul_gus:
     elem.clear()
@@ -51,10 +48,10 @@ for seoul_gu in seoul_gus:
     pages = divmod(entire_int,15)
     entire_page = pages[0]
     if entire_page > 35:
-        # 카카오맵은 검색시 34페이지 제한이 존재한다.
+        # 카카오맵은 검색시 34페이지 제한이 존재한다. 또한 python range는 마지막수 - 1 로 검색한다.
         entire_page = 35
 
-    print(seoul_gu, entire_page)
+    print(seoul_gu, entire_page - 1)
 
     # 1 페이지 확인
 
